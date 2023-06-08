@@ -13,11 +13,12 @@ There are other search algorithms, such as binary search, that are more suitable
 """
 
 
+# O(n)
 def linear_search(arr, target):
-    for i in range(len(arr)):
-        if arr[i] == target:
-            return i  # Found the target, return its index
-    return -1  # Target not found in the array
+    for i in range(len(arr)):   # O(n)
+        if arr[i] == target:    # O(1)
+            return i  # Found the target, return its index # O(1)
+    return -1  # Target not found in the array # O(1)
 
 
 # Example usage:

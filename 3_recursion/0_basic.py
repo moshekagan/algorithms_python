@@ -4,7 +4,7 @@ def foo(n):
 
 
 foo(5)
-print()
+print("------------")
 
 
 def rec_foo(n):

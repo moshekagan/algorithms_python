@@ -34,14 +34,24 @@ into smaller subproblems. However, it's worth noting that recursive solutions ma
 especially for large inputs, due to the overhead of function calls and stack frames.
 """
 
+# 5! = 5 * 4 * 3 * 2 * 1
 
+# 5! = 5 * 4! = 5 * 24 = 120
+# 4! = 4 * 3! = 4 * 6 = 24
+# 3! = 3 * 2! = 3 * 2 = 6
+# 2! = 2 * 1! = 2 * 1 = 2
+# 1! = 1 * 0! = 1 * 1 = 1
+# 0! = 1
 def factorial(n):
-    # Base case: factorial of 0 or 1 is 1
-    if n == 0 or n == 1:
+    if n == 0:
         return 1
-    # Recursive case: call the function with a smaller input
-    else:
-        return n * factorial(n - 1)
+
+    prev_n_fac = factorial(n-1)
+
+    return n * prev_n_fac
+
+
+print(factorial(5))     # 5!
 
 
 # Usage

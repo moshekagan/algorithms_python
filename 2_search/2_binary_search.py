@@ -18,12 +18,14 @@ Finally, we check the value of result to determine if the target value was found
 Binary search is an efficient search algorithm for sorted arrays as it eliminates half of the remaining elements in each iteration.
 """
 
-
+"""
+O(log(n))
+"""
 def binary_search(arr, target):
     low = 0
     high = len(arr) - 1
 
-    while low <= high:
+    while low <= high:  # O(log(n))
         mid = (low + high) // 2
         if arr[mid] == target:
             return mid  # Found the target, return its index
@@ -37,6 +39,11 @@ def binary_search(arr, target):
 
 # Example usage:
 my_list = [1, 3, 5, 7, 9, 11]
+# len(l) = n
+# n/2
+# n/2/2
+# n/2/2/2
+
 target_value = 7
 
 result = binary_search(my_list, target_value)

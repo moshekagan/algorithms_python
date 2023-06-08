@@ -10,9 +10,10 @@ When you run this code, it will output the Fibonacci number at position 6, which
 passed to the fibonacci function to calculate the Fibonacci number at a different position.
 """
 
+# 0  1  2 3 4 5 6  7  8
+# 0  1   ....
 
 def fibonacci(n):
-    # Base case: Fibonacci of 0 is 0, Fibonacci of 1 is 1
     if n == 0:
         return 0
     elif n == 1:
