@@ -16,9 +16,11 @@ def f_of_x(x, coefs):
 
 
 def find_intersects(f1, f2):
-    min_distances = sorted(np.abs(f1 - f2))[:2]
-    condition = (min_distances[0] == np.abs(f1 - f2)) | (min_distances[1] == np.abs(f1 - f2))
+    distance_f1_f2 = np.abs(f1 - f2)
+    min_distances = sorted(distance_f1_f2)[:2]
+    condition = (min_distances[0] == distance_f1_f2) | (min_distances[1] == distance_f1_f2)
     intersect_indexes = np.where(condition)[0]
+
     return intersect_indexes
 
 
@@ -35,4 +37,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main2()
+    main()

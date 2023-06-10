@@ -26,16 +26,19 @@ def selection_sort(arr):
     n = len(arr)
 
     # Traverse through all array elements
-    for i in range(n):
+    for i in range(n):  # O(n)
 
         # Find the minimum element in the remaining unsorted portion
         min_index = i
-        for j in range(i + 1, n):
+        for j in range(i + 1, n):  # O(n-i) = O(n)
             if arr[j] < arr[min_index]:
                 min_index = j
 
         # Swap the minimum element with the current element
         arr[i], arr[min_index] = arr[min_index], arr[i]
+
+
+# O(n^2)
 
 
 # Usage

@@ -11,12 +11,16 @@ def countCInList(l, c):
     if len(l) == 0:
         return 0
 
-    count = countCInList(l[:-1], c)
+    s = 0
 
     if l[-1] == c:
-        return count + 1
+        s = 1
     else:
-        return count
+        s = 0
+
+    count = countCInList(l[:-1], c)
+
+    return s + count
 
 
 # Q1.B.

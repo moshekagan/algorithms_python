@@ -40,8 +40,11 @@ https://www.youtube.com/watch?v=JSceec-wEyw&ab_channel=GeeksforGeeks
 
 
 def merge_sort(arr):
+    # [] [1]
     if len(arr) <= 1:
         return arr
+
+    # arr is greater then 1
 
     # Divide the array into two halves
     mid = len(arr) // 2
@@ -83,7 +86,12 @@ def merge(left, right):
     return merged
 
 
+print(merge_sort([]))
+print(merge_sort([2]))
+print(merge_sort([3, 2]))
+print(merge_sort([4, 2, 3, 1]))
+
 # Usage
-my_array = [5, 2, 8, 12, 3]
+my_array = [5, 2, 8, 12, 3, 1]
 sorted_array = merge_sort(my_array)
 print(sorted_array)  # Output: [2, 3, 5, 8, 12]
