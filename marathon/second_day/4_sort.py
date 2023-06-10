@@ -5,6 +5,6 @@ sl = sorted(l)
 
 print(sl)
 
-# O(n^2)
-# O(n*log(n))
-# O(n) - X
+# O(n^2) - Bad
+# O(n*log(n)) - Best
+

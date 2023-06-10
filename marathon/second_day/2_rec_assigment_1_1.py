@@ -19,7 +19,6 @@ def isCNInList(l, c, n):
         return False
 
 
-
 if __name__ == '__main__':
     # Q1 test
     l = [1, 4, 7, 1, 2, 1]

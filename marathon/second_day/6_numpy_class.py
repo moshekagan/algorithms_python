@@ -17,6 +17,7 @@ def f_of_x(x, cofes):
 
     return res
 
+
 #       0 1 2
 # f1 = [1,2,3]
 # f2 = [5,2,8]
@@ -51,10 +52,10 @@ def main():
     f_x = f_of_x(x, [-5, 5, 2])
     g_x = f_of_x(x, [50, 5])
     plt.figure()
-    plt.plot(x,f_x,'k')
-    plt.plot(x,g_x,'k')
+    plt.plot(x, f_x, 'k')
+    plt.plot(x, g_x, 'k')
     intersect_indexes = find_intersects(f_x, g_x)
-    plt.plot(x[intersect_indexes],g_x[intersect_indexes],'r',marker = 'o',markersize = 14,linewidth = 0)
+    plt.plot(x[intersect_indexes], g_x[intersect_indexes], 'r', marker='o', markersize=14, linewidth=0)
     plt.show()
 
 

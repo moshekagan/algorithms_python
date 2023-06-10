@@ -8,6 +8,7 @@ def sum_list(l):
 
     return s
 
+
 l = [1, 34, 56, 7]
 print(sum_list(l))
 
@@ -21,11 +22,7 @@ def rec_sum_list(l):
     return l[0] + x
 
 
-
-print(rec_sum_list([]))      # 0
-print(rec_sum_list([4]))     # 4
+print(rec_sum_list([]))  # 0
+print(rec_sum_list([4]))  # 4
 print(rec_sum_list([4, 5]))  # 9
-print(rec_sum_list(l))       # 98
-
-
-
+print(rec_sum_list(l))  # 98

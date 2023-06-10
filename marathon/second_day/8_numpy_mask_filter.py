@@ -1,6 +1,5 @@
 import numpy as np
 
-
 if __name__ == "__main__":
     x = np.linspace(-10, 10, 50)
 
@@ -13,7 +12,3 @@ if __name__ == "__main__":
 
     # get indexs of the filter
     print(np.where(mask)[0])
-
-
-
-

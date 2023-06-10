@@ -25,9 +25,9 @@ def countNumsDict(l, d={}):
 
 if __name__ == '__main__':
     # Q2 test
-    print(countNumsDict([], {}))        # {}
-    print(countNumsDict([7], {}))       # {7: 1}
-    print(countNumsDict([1, 1], {}))    # {1: 2}
+    print(countNumsDict([], {}))  # {}
+    print(countNumsDict([7], {}))  # {7: 1}
+    print(countNumsDict([1, 1], {}))  # {1: 2}
 
     l = [1, 4, 7, 1, 2, 1]
     print(countNumsDict(l, {}))

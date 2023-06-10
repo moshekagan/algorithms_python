@@ -1,6 +1,5 @@
 import numpy as np
 
-
 if __name__ == "__main__":
     x = np.linspace(-10, 10, 50)
 
@@ -11,7 +10,7 @@ if __name__ == "__main__":
     res = np.all(mask1)
     print(res)  # False
 
-    mask1 = x > -100    # [T, T, T, T....]
+    mask1 = x > -100  # [T, T, T, T....]
     res = np.any(mask1)
     print(res)  # True
 
