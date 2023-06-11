@@ -13,8 +13,8 @@ n = diamonds['cut'].nunique()
 print(f'the number of unique values is {n}')
 
 # examples of aggregation functions
-print(diamonds.mean())
-print(diamonds.agg('mean'))
+# print(diamonds.mean())
+# print(diamonds.agg('mean'))
 print(diamonds[['carat', 'price']].agg(['mean', 'sum']))
 
 diamonds.aggregate({"carat": ['max', 'min'],
@@ -63,8 +63,8 @@ for name, group in grpcut:
 # std()  Standard deviation
 # var()  Variance
 
-grpcut_mean = grpcut.mean()  # mean values for each numeric column by group.
-print(grpcut_mean)
+# grpcut_mean = grpcut.mean()  # mean values for each numeric column by group.
+# print(grpcut_mean)
 
 grpcut_mean_price = grpcut['price'].mean()  # calculate mean for the 'price' column only
 print(grpcut_mean_price)
@@ -89,9 +89,9 @@ def get_D_color(df):  # df is the DataFrame of each group
 print(grpcut.apply(get_D_color))
 
 # ### Filtering: filter() , query()
-grpcut_mean = grpcut.mean()  # mean values for each numeric column by group.
+# grpcut_mean = grpcut.mean()  # mean values for each numeric column by group.
 print(grpcut.size())
-print(grpcut_mean)
+# print(grpcut_mean)
 print(grpcut['price'].filter(lambda x: x.mean() > 4400))
 print(diamonds.query("color=='D'").groupby('cut').size())
 
