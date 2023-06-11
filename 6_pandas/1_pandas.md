@@ -43,6 +43,9 @@ import pandas as pd
 - `pd.DataFrame.loc[:, condition]`: Filters DataFrame columns based on a condition.
 - `pd.DataFrame.isna().sum()`: Calculates the sum of missing values in each column of a DataFrame.
 - `pd.DataFrame.loc[:, condition]`: Filters DataFrame columns based on a condition.
+- `pd.Series.value_counts`: is a pandas function that returns a count of unique values in a Series, providing a summary of the frequency distribution of values.
+- `pd.Series.nlargest`: is a pandas function that returns the n largest values from a Series, allowing you to quickly identify the top values based on their magnitude or order.
+
 
 ### More
 - `pd.read_csv('diamonds.csv')`: Reads a CSV file and returns a DataFrame.
