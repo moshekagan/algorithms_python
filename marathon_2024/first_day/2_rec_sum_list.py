@@ -1,0 +1,23 @@
+# Write a Python program to calculate the sum of a list of numbers.
+
+
+def sum_list(l):
+    s = 0
+    for i in l:
+        s += i
+
+    return s
+
+
+l = [1, 34, 56, 7]
+print(sum_list(l))
+
+
+def rec_sum_list(l):
+    pass
+
+
+print(rec_sum_list([]))  # 0
+print(rec_sum_list([4]))  # 4
+print(rec_sum_list([4, 5]))  # 9
+print(rec_sum_list(l))  # 98

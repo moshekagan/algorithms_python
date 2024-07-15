@@ -46,4 +46,14 @@ def permute(nums):
 
 
 # Usage
+print(permute([]))
+print(permute([1]))
+print(permute([2]))
+print(permute([1, 2]))
 print(permute([1, 2, 3]))
+
+p = permute([1, 2, 3, 4, 5])
+print("[")
+for i in p:
+    print(f"\t{i},")
+print("]")

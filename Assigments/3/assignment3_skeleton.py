@@ -1,109 +1,90 @@
 import pandas as pd
 import numpy as np
-from pandas.core.interchange.dataframe_protocol import DataFrame
 
+class Data_Analyzer():
+    def __init__(self,fname):
+        self.df = pd.read_csv(fname)
 
-class Data_Preprocess():
-    def __init__(self, fname):
-        self.df = pd.read_pickle(fname)
+    def __repr__(self):
+        return repr(self.df.head())
 
-    def intro(self):
-        pass
-
-    def describe_object(self):
-        pass
-
-    def describe_all(self, num):
-        pass
-
+    # Q1
     def omit_zeros(self):
         pass
 
-    def filt_top_areas_by_unit(self):
+    # Q2
+    def calc_total(self):
+        def f(): # add input
+            pass
         pass
 
-    def drop_cols(self):
+    # Q3
+    def select_group(self):
         pass
 
-    def calc_stats_by_factors(self):
+    # Q4
+    def summ_by_group(self):
         pass
 
-    def norm_by_factors(self):
+    # Q5
+    def concat_dfs(self):
         pass
 
-    def split_by_factor(self):
+    # Q6
+    def merge(self):
         pass
 
-    def merge_dfs(self):
+    def merge_sort(self):
         pass
-
-    def diff_cols(self):
-        pass
-
-    def apply_diff_cols(self):
-        pass
-
 
 def main():
-    data = Data_Preprocess('data.pickle')
-    # 1.
-    # data.intro()
+    data = Data_Analyzer('employment.csv')
+    print(data)
 
-    # 2. + 3.
-    # data.describe_all(0)
-
-    # 4.
-    # data.omit_zeros()
-    # print("4. after omitting zeros df shape is ", data.df.shape)
-    # print(data.df.head())
-
-    # 5.
-    # data.filt_top_areas_by_unit('tonnes',5)
-    # print("5. After filtering product tonnes from 5 most reported areas, df shape is ", data.df.shape)
-    # print(data.df.head())
-
-    # 6.
-    # data.drop_cols(["Item","Unit"])
-    # print("df shape after cols reduction",data.df.shape)
-
-    # 7.
-    # group by year+element, calculate annual mean and std of export and import quantities
-    # print("annual mean and std of export and import quantities")
-    # print(data.calc_stats_by_factors(data.df,["Year","Element"],"Value",[np.mean,np.std]))
-
-    # 8.
-    # apply z-score normalization by Year
-    # data.norm_by_factors(["Year"])
-    # print("after z-score normalization by Year\n")
-    # print(data.df.head(10))
+    # Q1
+    # data.omit_zeros(colnames = ["Gender", "Salary","Bonus %"])
     # print(data.df.shape)
+    # print(sum(data.df["Gender"]==0))
+    # print(sum(data.df["Salary"]==0))
+    # print(sum(data.df["Bonus %"]==0))
 
-    # 9.
-    # data.export_df = data.split_by_factor("Element","Export Quantity")
-    # print("Export dataframe shape is ",data.export_df.shape)
-    # print("Export dataframe head:\n", data.export_df.head())
-    # data.import_df = data.split_by_factor("Element", "Import Quantity")
-    # print("Import dataframe shape is ",data.import_df.shape)
-    # print("Import dataframe head:\n", data.import_df.head())
+    # Q2
+    ### in case Q1 didn't work, reload df using next line:
+    # data.df = pd.read_csv("clean_df.csv")
+    ### test calc_total:
+    # data.calc_total("Salary", "Bonus %", "total")
+    # print(data)
+    # print(np.all(np.round((data.df.loc[:,"Salary"]*(1+(data.df.loc[:,"Bonus %"]/100))),1)==np.round(data.df.loc[:,"total"],1)))
 
-    # Additional tests on export/import data
-    # data.export_df = data.calc_stats_by_factors(data.export_df,["Area","Year"],"Value",np.mean)
-    # print("export dataframe stats shape is ",data.export_df.shape)
-    # print(data.export_df.head())
-    # data.import_df = data.calc_stats_by_factors(data.import_df,["Area","Year"],"Value",np.mean)
-    # print("import dataframe stats shape is ",data.import_df.shape)
-    # print(data.import_df.head())
+    # Q3
+    # females_salaries = data.select_group(group_col = "Gender", group = "Female")
+    # males_salaries = data.select_group(group_col="Gender", group="Male")
+    # print(females_salaries.shape)
+    # print(males_salaries.shape)
 
-    # 10.
-    # data.merged = data.merge_dfs(data.import_df,data.export_df,["Import","Export"])
-    # print("merged Export-Import dataframe shape is ",data.merged.shape)
-    # print("merged Export-Import head:\n",data.merged.head())
+    # Q4
+    # females_salaries = data.summ_by_group(females_salaries,group_cols = ["Team"],val_col = ["total"],funcs = [np.mean])
+    # print(females_salaries.shape)
+    # print(females_salaries)
+    # males_salaries = data.summ_by_group(males_salaries,group_cols = ["Team"],val_col = ["total"],funcs = [np.mean])
+    # print(males_salaries.shape)
+    # print(males_salaries)
 
-    # 11.
-    # data.merged = data.apply_diff_cols(data.merged,c1="Export",c2="Import",newcol='GNI')
-    # print("merged Export-Import dataframe with GNI looks like this:")
-    # print(data.merged.head(10))
+    # Q5
+    ### in case Q4 didn't work, use next line
+    # females_salaries = pd.read_csv("females_salaries.csv")
+    # males_salaries = pd.read_csv("males_salaries.csv")
+    ### test concat_dfs:
+    # join_dfs = data.concat_dfs([females_salaries,males_salaries],col1="females",col2="males",newcol = "diff")
+    # print(join_dfs.shape)
+    # print(join_dfs)
 
+    # Q6
+    ### in case Q5 didn't work, use next line
+    # join_dfs = pd.read_csv("join_dfs.csv")
+    ### test merge_sort:
+    # arr = data.merge_sort(join_dfs,"diff").reset_index(drop=True)
+    # print(arr)
 
-if __name__ == "__main__":
+if __name__=="__main__":
     main()
