@@ -31,3 +31,11 @@ if result != -1:
     print(f"The target value {target_value} is found at index {result}.")
 else:
     print("The target value is not found in the array.")
+
+my_list_2 = [4, 2, 88, 1, 9, 5]
+result = linear_search(my_list_2, target_value)
+
+if result != -1:
+    print(f"The target value {target_value} is found at index {result}.")
+else:
+    print("The target value is not found in the array.")

@@ -6,14 +6,16 @@ def print_list(l):
         print(i)
 
 
-# recursive function
 def print_list_rec(l):
     if len(l) == 0:
         return
 
+#     l is not empty!
     print(l[0])
-    print_list_rec(l[1:])
-
+    # l =[1,2,3,4,5]
+    s_l = l[1:]
+    # s_l = [2,3,4,5]
+    print_list_rec(s_l)
 
 # Tests
 print_list_rec([])

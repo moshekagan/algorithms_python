@@ -30,12 +30,14 @@ def selection_sort(arr):
 
         # Find the minimum element in the remaining unsorted portion
         min_index = i
-        for j in range(i + 1, n):  # O(n-i) = O(n)
+        for j in range(i + 1, n):  # n-1, n-2, n-3,... n-n-1 => O(n)
             if arr[j] < arr[min_index]:
                 min_index = j
 
         # Swap the minimum element with the current element
-        arr[i], arr[min_index] = arr[min_index], arr[i]
+        temp = arr[min_index]
+        arr[min_index] = arr[i]
+        arr[i] = temp
 
 
 # O(n^2)

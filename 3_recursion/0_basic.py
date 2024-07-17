@@ -10,7 +10,7 @@ print("------------")
 def rec_foo(n):
     if n > 0:
         print("Hi")
-        foo(n-1)
+        rec_foo(n-1)
 
 
 rec_foo(5)

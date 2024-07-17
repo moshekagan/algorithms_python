@@ -5,13 +5,11 @@
 
 
 def mystery_function(n):
-    count = 0
-    for i in range(n):
-        j = 1
-        while j < n:
-            j *= 2
+    count = 0 # 1
+    for i in range(n): # O(n)
+        j = 1 # 1
+
+        while j < n: # O(log(n))
+            j = j*2
             count += 1
     return count
-
-
-
