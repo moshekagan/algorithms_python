@@ -1,7 +1,7 @@
 import pandas as pd
 
 def my_print(*args):
-    print(*args, end='\n\n')
+    print(*args, end='\n\n--------------------------------------------\n\n')
 
 # Creating a Series
 series = pd.Series([1, 2, 3, 4, 5])
@@ -15,7 +15,7 @@ my_print(series.mean())
 my_print(series.std())
 
 # Creating a DataFrame
-data = {'Name': ['John', 'Jane', 'Mike', 'Alice'], 'Age': [23, 25, 30, 22], "Grads": [100, 90, 80, 70]}
+data = {'Name': ['John', "Yossi", 'Jane', 'Mike', 'Alice'], 'Age': [23, 25, 25, 30, 22], "Grads": [100, 95, 90, 80, 70]}
 df = pd.DataFrame(data)
 my_print(df)
 
@@ -67,6 +67,7 @@ my_print(is_in_list)
 
 string_series = pd.Series(['apple', 'banana', 'cherry'])
 contains_substring = string_series.str.contains('a')
+my_print(string_series[contains_substring])
 my_print(contains_substring)
 
 
@@ -75,11 +76,16 @@ df_renamed = df.rename(columns={'Age': 'Years'})
 my_print(df_renamed)
 
 # Drop data
+# row
 df_dropped = df.drop(['John'])
 my_print(df_dropped)
 
+# column
+df_dropped_column = df.drop(['Age'], axis=1)
+my_print(df_dropped_column)
+
 # Grouping Data
-grouped = df.groupby('Age').sum()
+grouped = df.groupby('Age').sum(["Age"])
 my_print(grouped)
 
 df_with_nan = pd.DataFrame({'Name': ['John', 'Jane', 'Mike', None], 'Age': [23, 25, 30, None]})
