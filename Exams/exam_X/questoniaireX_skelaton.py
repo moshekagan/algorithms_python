@@ -81,10 +81,10 @@ class Data_Analyzer():
 
 
     # Q6
-    def merge(self,left, right,col = "netVal"):
-        pass
-    def merge_sort(self,L,col = "netVal"):
-      if
+    # def merge(self,left, right,col = "netVal"):
+    #     pass
+    # def merge_sort(self,L,col = "netVal"):
+    #   if
 
     # Q7
     def binary_search(self,d, low, high, x, col="netVal"):
