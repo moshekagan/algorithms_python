@@ -43,9 +43,10 @@ class Data_Analyzer():
     def concat_dfs(self, dfs=[] ,col1="",col2="",newcol = "diff"):
         new_df = pd.concat(dfs, axis=1)
         new_df.columns = [col1, col2]
-        new_col = new_df[col1] - new_df[col2]
-        new_df[newcol] = new_col
+        new_column = new_df[col1] - new_df[col2]
+        new_df[newcol] = new_column
         new_df = new_df.reset_index()
+
         return new_df
 
     # Q6
