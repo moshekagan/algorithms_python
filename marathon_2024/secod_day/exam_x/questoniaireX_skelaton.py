@@ -82,18 +82,47 @@ class Data_Analyzer():
 
     # Q5
     def flt(self,group_col = "Area",val = "", threshold = 0):
-        pass
+        # Option A
+        average = self.df.groupby(group_col)[val].transform("max")
+        filtered_df = self.df[average > threshold]
+        return filtered_df
 
+        # Option B
+        # groups = self.df.groupby(group_col)
+        # groups_mean = groups[val].mean()
+        # print(groups_mean)
+        # filter = groups_mean > threshold
+        # above_threshold_groups = groups_mean[filter]
+        # areas_names = above_threshold_groups.index.tolist()
+        #
+        # filter_rows = self.df[group_col].isin(areas_names)
+        # res = self.df[filter_rows]
+        # return res
 
     # Q6
-    def merge(self,left, right,col = "netVal"):
-        pass
-    def merge_sort(self,L,col = "netVal"):
-      pass
-
-    # Q7
     def binary_search(self,d, low, high, x, col="netVal"):
-        pass
+        if low > high:
+            if (x-d[col].iloc[low]).abs() >  (x-d[col].iloc[high]).abs():
+                return high
+            else:
+                return low
+        else: # low <= high
+            mid = (low + high) // 2
+            mid_value = d[col].iloc[mid]
+
+            if x == mid_value:
+                # we found it!
+                return mid
+
+            if x < mid_value:
+                new_high = mid - 1
+                res = self.binary_search(d, low, new_high, x, col)
+                return res
+            else:
+                new_low = mid + 1
+                res = self.binary_search(d, new_low, high, x, col)
+                return res
+
 
 def main():
     data = Data_Analyzer('import_export.csv')
